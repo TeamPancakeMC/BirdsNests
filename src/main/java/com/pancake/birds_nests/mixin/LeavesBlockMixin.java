@@ -31,14 +31,11 @@ public abstract class LeavesBlockMixin extends Block {
     @Overwrite
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource randomSource) {
         if (this.decaying(state)) {
-            System.out.println("Decaying");
             List<ItemStack> loot = getDrops(state, level, pos, null);
 
             LeavesDecayingEvent leavesDecayingEvent = new LeavesDecayingEvent(level, pos, state, loot);
             MinecraftForge.EVENT_BUS.post(leavesDecayingEvent);
-            if (leavesDecayingEvent.isCanceled()) {
-                return;
-            }
+            if (leavesDecayingEvent.isCanceled()) return;
             List<ItemStack> eventLoot = leavesDecayingEvent.getLoot();
             for (ItemStack stack : eventLoot) {
                 popResource(level, pos, stack);
