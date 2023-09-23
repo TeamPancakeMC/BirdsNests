@@ -42,7 +42,6 @@ public class ItemNest extends Item {
 
 	private void generateLoot(Level level, Player player) {
 		if (LOOT_TABLE == BuiltInLootTables.EMPTY) return;
-		System.out.println("Generating loot");
 		LootTable loottable = ServerLifecycleHooks.getCurrentServer().getLootData().getLootTable(LOOT_TABLE);
 		LootParams.Builder builder = new LootParams.Builder((ServerLevel) level);
 		LootParams lootParams = builder.create(LootContextParamSet.builder().build());
