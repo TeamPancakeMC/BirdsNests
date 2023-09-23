@@ -18,6 +18,9 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraftforge.server.ServerLifecycleHooks;
+
+import java.util.List;
+
 public class ItemNest extends Item {
 	private static final ResourceLocation LOOT_TABLE = new ResourceLocation("birds_nests:nest_loot");
 	public ItemNest() {
@@ -44,14 +47,12 @@ public class ItemNest extends Item {
 
 	private void generateLoot(Level level, Player player) {
 		if (LOOT_TABLE == BuiltInLootTables.EMPTY) return;
-		System.out.println("Generating loot");
 		LootTable loottable = ServerLifecycleHooks.getCurrentServer().getLootTables().get(LOOT_TABLE);
 
 		LootContext.Builder builder = new LootContext.Builder((ServerLevel) level);
 		LootContext lootcontext = builder.withParameter(LootContextParams.ORIGIN, player.getEyePosition()).withParameter(LootContextParams.THIS_ENTITY, player).create(LootContextParamSets.GIFT);
 
-		ObjectArrayList<ItemStack> randomItems = loottable.getRandomItems(lootcontext);
-		for (ItemStack itemStack : randomItems) {
+		for (ItemStack itemStack : loottable.getRandomItems(lootcontext)) {
 			level.addFreshEntity(new ItemEntity((ServerLevel) level, player.getX(), player.getY() + 1.5D, player.getZ(), itemStack));
 		}
 	}
