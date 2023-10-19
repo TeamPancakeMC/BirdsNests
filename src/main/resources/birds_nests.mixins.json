@@ -3,7 +3,7 @@
   "minVersion": "0.8",
   "package": "com.pancake.birds_nests.mixin",
   "compatibilityLevel": "JAVA_17",
-  "refmap": "BirdsNests.refmap.json",
+  "refmap": "birds_nests.refmap.json",
   "mixins": [
     "LeavesBlockMixin"
   ],
