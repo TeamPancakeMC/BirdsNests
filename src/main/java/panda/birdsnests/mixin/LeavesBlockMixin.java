@@ -1,6 +1,6 @@
-package com.pancake.birds_nests.mixin;
+package panda.birdsnests.mixin;
 
-import com.pancake.birds_nests.LeavesDecayingEvent;
+import panda.birdsnests.LeavesDecayingEvent;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.item.ItemStack;

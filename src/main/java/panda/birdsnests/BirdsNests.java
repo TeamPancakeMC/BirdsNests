@@ -1,4 +1,4 @@
-package com.pancake.birds_nests;
+package panda.birdsnests;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -17,7 +17,7 @@ import net.minecraftforge.registries.RegistryObject;
 @Mod(BirdsNests.MOD_ID)
 public class BirdsNests {
 
-	public static final String MOD_ID = "birds_nests";
+	public static final String MOD_ID = "birdsnests";
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
 	public static final DeferredRegister<CreativeModeTab> TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB.location(), MOD_ID);
 	public static final RegistryObject<Item> NEST = ITEMS.register("nest", ItemNest::new);

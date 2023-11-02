@@ -1,4 +1,4 @@
-package com.pancake.birds_nests;
+package panda.birdsnests;
 
 
 
@@ -18,7 +18,7 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
 import net.minecraftforge.server.ServerLifecycleHooks;
 public class ItemNest extends Item {
-	private static final ResourceLocation LOOT_TABLE = new ResourceLocation("birds_nests:nest_loot");
+	private static final ResourceLocation LOOT_TABLE = new ResourceLocation("birdsnests:nest_loot");
 	public ItemNest() {
 		super(new Item.Properties()
 				.stacksTo(64));

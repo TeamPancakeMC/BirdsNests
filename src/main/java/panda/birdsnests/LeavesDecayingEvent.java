@@ -1,4 +1,4 @@
-package com.pancake.birds_nests;
+package panda.birdsnests;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.ItemStack;
